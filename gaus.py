@@ -6,7 +6,7 @@ class Formular:
 		self.b = b
 		self.c = c
 		self.d = d
-	
+
 	def change(self, a, b, c, d):
 		self.a = a
 		self.b = b
@@ -47,11 +47,11 @@ f3.second_stage(f2)
 f3.print()
 
 print()
-z = f3.d/f3.c
-print(f"z = {z}") 
+z = round(f3.d/f3.c, 10)
+print(f"z = {z}")
 
-y = (f2.d-f2.c*z)/f2.b
-print(f"y = {y}") 
+y = round((f2.d-f2.c*z)/f2.b, 10)
+print(f"y = {y}")
 
-x = (f1.d-f1.c*z-f1.b*y)/f1.a
-print(f"x = {x}") 
+x = round((f1.d-f1.c*z-f1.b*y)/f1.a, 10)
+print(f"x = {x}")
