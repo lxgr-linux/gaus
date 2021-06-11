@@ -16,19 +16,19 @@ class Formular:
 	def print(self):
 		print(f"{self.a}x + {self.b}y + {self.c}z = {self.d}")
 
-	def stage(self, fac, f):
-		self.change(*(eval(f"f.{i}-fac*self.{i}", {"fac": fac, "f": f, "self":self}) for i in ["a", "b", "c", "d"]))
+	def stage(self, fac1, fac2, f):
+		self.change(*(eval(f"fac1*f.{i}-fac2*self.{i}", {"fac1": fac1, "fac2": fac2, "f": f, "self":self}) for i in ["a", "b", "c", "d"]))
 
 	def first_stage(self, f1):
-		self.stage(f1.a/self.a, f1)
+		self.stage(self.a, f1.a, f1)
 
 	def second_stage(self, f2):
-		self.stage(f2.b/self.b, f2)
+		self.stage(self.b, f2.b, f2)
 
 
-f1 = Formular(4, -2, 2, 2)
-f2 = Formular(-2, 3, -2, 0)
-f3 = Formular(3, -5, 1, -7)
+f1 = Formular(4, -2, 1, 15)
+f2 = Formular(-1, 3, 4, 15)
+f3 = Formular(5, -1, 3, 26)
 
 for i in [f1, f2, f3]:
 	i.print()
